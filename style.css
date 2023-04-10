@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: #000;
+  display: grid;
+  place-content: center;
+  place-items: center;
+}
+
+.clock {
+  width: 50vw;
+  height: 50vh;
+  /*border: 0.1rem solid red;*/
+
+  justify-content: center;
+  align-items: center;
+}
+
+.gap-2 {
+  gap: 2rem;
+}
+
+.gap {
+  gap: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-end {
+  align-items: flex-end;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.circle {
+  width: 6rem;
+  height: 5rem;
+  border-radius: 0.3rem;
+  background-color: #616161;
+}
+.one {
+  background-color: #252575;
+}
+
+.text-gray {
+  color: #d3d3d3;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-xl {
+  font-size: 5rem;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.HH::after {
+  content: ":";
+  position: absolute;
+  right: -1.6rem;
+  animation: blink 2s ease-in-out infinite;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+.blink {
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
