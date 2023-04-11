@@ -10,23 +10,35 @@ const minDozensChildren = minDozens.children;
 const minUnits = document.querySelector(".min-units");
 const minUnitsChildren = minUnits.children;
 
+const secsDonzes = document.querySelector(".secs-dozens");
+const secsDonzesChildren = secsDonzes.children;
+
+const secsUnits = document.querySelector(".secs-units");
+const secsUnitsChildren = secsUnits.children;
+
 const H = document.querySelector(".H");
 const HH = document.querySelector(".HH");
 
 const M = document.querySelector(".M");
 const MM = document.querySelector(".MM");
 
+const S = document.querySelector(".S");
+const SS = document.querySelector(".SS");
+
 function changeTime() {
   const data = new Date(Date.now());
   const hrs = data.getHours().toString();
   const min = data.getMinutes().toString().padStart("2", "0");
-  const sec = data.getSeconds();
+  const sec = data.getSeconds().toString().padStart("2", "0");
 
   HH.innerHTML = hrs.charAt(1);
   H.innerHTML = hrs.charAt(0);
 
   M.innerHTML = min.charAt(0);
   MM.innerHTML = min.charAt(1);
+
+  S.innerHTML = sec.charAt(0);
+  SS.innerHTML = sec.charAt(1);
 
   for (let i = 0; i < dozensChildren.length; i++) {
     const bcd = decimalToBCD(hrs.charAt(0));
@@ -64,6 +76,24 @@ function changeTime() {
       minUnitsChildren[i].classList.add("one", "fade-in");
     } else {
       minUnitsChildren[i].classList.remove("one", "fade-in");
+    }
+  }
+
+  for (let i = 0; i < secsDonzesChildren.length; i++) {
+    const bcd = decimalToBCD(sec.charAt(0));
+    if (bcd.split("")[i + 1] === "1") {
+      secsDonzesChildren[i].classList.add("one", "fade-in");
+    } else {
+      secsDonzesChildren[i].classList.remove("one", "fade-in");
+    }
+  }
+
+  for (let i = 0; i < secsUnitsChildren.length; i++) {
+    const bcd = decimalToBCD(sec.charAt(1));
+    if (bcd.split("")[i] === "1") {
+      secsUnitsChildren[i].classList.add("one", "fade-in");
+    } else {
+      secsUnitsChildren[i].classList.remove("one", "fade-in");
     }
   }
 }

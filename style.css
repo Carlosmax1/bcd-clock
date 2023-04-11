@@ -11,7 +11,7 @@
 
 body {
   height: 100vh;
-  background-color: #000;
+  background-color: #111;
   display: grid;
   place-content: center;
   place-items: center;
@@ -84,7 +84,14 @@ body {
   content: ":";
   position: absolute;
   right: -1.6rem;
-  animation: blink 2s ease-in-out infinite;
+  /* animation: blink 2s ease-in-out infinite; */
+}
+
+.MM::after {
+  content: ":";
+  position: absolute;
+  right: -1.6rem;
+  /* animation: blink 2s ease-in-out infinite; */
 }
 
 .fade-in {
