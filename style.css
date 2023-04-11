@@ -26,8 +26,8 @@ body {
   align-items: center;
 }
 
-.gap-2 {
-  gap: 2rem;
+.gap-1 {
+  gap: 1rem;
 }
 
 .gap {
@@ -121,5 +121,12 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .circle {
+    width: 5rem;
+    height: 4rem;
   }
 }
